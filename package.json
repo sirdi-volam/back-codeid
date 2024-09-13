@@ -1,18 +1,17 @@
 {
   "name": "back-codeid",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "start:dev": "nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.20.0",
-    "sequelize": "^6.37.3"
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

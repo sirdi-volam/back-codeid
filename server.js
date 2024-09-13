@@ -1,13 +1,21 @@
-import express from 'express'
+const express = require('express')
+const { connectToDb, getDb} = require('./app/config/db.config')
 
-const app = express()
+const PORT = 3000;
 
-app.get('/', (req, res) => {
-  
-})
+const app = express();
 
-app.listen(4444, (e) => {
-  if (e) {
-    return 
+let db;
+
+connectToDb((e) => {
+  if (!e) {
+    app.listen(PORT, (e) => {
+      e ? console.log(e) : console.log(`Server running on port ${PORT}`)
+    });
+    db = getDb()
+  } else {
+    console.log(`DB connection error: ${e}`);
+    
   }
 })
+
